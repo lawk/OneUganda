@@ -165,6 +165,7 @@
 
             </div>
         </footer>
+        <div class="credits">made by: <a target="_blank" href="http://www.leclub.co">m★</a> & <a target="_blank" href="http://digitalfredy.wordpress.com/">digitalfredy</a></div>
       </div><!-- END Footer -->
 
     </div><!-- END Wrap -->
@@ -206,7 +207,6 @@
 
     <!-- JS Eventbrite -->
     <script>
-
       $(document).ready(function() {
         Eventbrite({'app_key': "K3VRRTPS6WTWSAPKCJ"}, function(eb){
             var options = {
@@ -218,9 +218,7 @@
             });
         });
       });
-
     </script>
 
   </body>
-
 </html>
