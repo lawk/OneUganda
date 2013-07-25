@@ -1,4 +1,4 @@
-test
+
 <?php
   /* Short and sweet */
   define('WP_USE_THEMES', false);
@@ -36,7 +36,6 @@ test
   </head>
   <body>
     <div id="wrap">
-    test git pull
       <!-- :::::: Header -->
       <header id="header">
         <!-- Tabzilla -->
