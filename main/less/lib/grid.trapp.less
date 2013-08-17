@@ -7,7 +7,7 @@
 * @copyright:   2013 by the author
 * @license:     This work is licensed under a Creative Commons Attribution 3.0 Unported License.
 * @file:        grid.trapp.less
-* @version:     v 1.2
+* @version:     v 1.4
 * @see:         https://github.com/Mayccoll/Less-Trapp
 * @date:        7-Feb-2013
 *
@@ -246,9 +246,6 @@ http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
 
     @g:     @f+1;
 
-    // @nth_n:       @{r}n+@{f};
-    // @nth_n1:      ~"@{r}n+@{g}";
-
     .func_width ( @columns_cant );
 
     & {
@@ -297,6 +294,62 @@ http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
     }
   }
 
+  .col ( @columns_cant, @p_nth, @p_wi ) when ( isnumber( @p_nth ) )
+                                and ( @columns_cant < @columns )
+                                and ( @p_nth > 1 )
+                                and ( @p_wi = w ){
+    @r:     @p_nth;
+    @f:     @p_nth;
+
+    @g:     @f+1;
+
+    .func_width ( @columns_cant );
+
+    & {
+      float: left;
+      position: relative;
+      margin-left: @margin;
+      margin-right: @margin;
+      width: @width;
+      .clearfix;
+    }
+
+    &:nth-of-type( @{r}n+@{f} ) {
+      float: left;
+      position: relative;
+      margin-left: @margin !important;
+      margin-right: 0;
+      width: @width;
+      .clearfix;
+    }
+
+    &:last-of-type {
+      float: left;
+      position: relative;
+      margin-left: @margin;
+      margin-right: 0;
+      width: @width;
+      .clearfix;
+    }
+
+    &:nth-of-type( @{r}n+@{g} ) {
+      float: left;
+      position: relative;
+      margin-left: @margin ;
+      margin-right: @margin;
+      width: @width;
+      .clearfix;
+    }
+
+    &:first-of-type {
+      float: left;
+      position: relative;
+      margin-left: 0;
+      margin-right: @margin ;
+      width: @width;
+      .clearfix;
+    }
+  }
 
   .col ( @columns_cant, @p_nth, @push_pull ) when ( isnumber( @p_nth ) )
                                 and ( @columns_cant < @columns )
@@ -308,9 +361,6 @@ http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
     @g:     @f+1;
 
     @move:  ( @column_width + @gutter_width ) * @push_pull;
-
-    // @nth_n:       ~"@{r}n+@{f}";
-    // @nth_n1:      ~"@{r}n+@{g}";
 
     .func_width ( @columns_cant );
 
@@ -361,13 +411,15 @@ http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
   }
 
 
-  .col-s ( @parent, @numOfCols ) {
+  .col-s ( @numOfCols, @parent  ) {
 
-    // @nth-n:~"@{numOfCols}n";
-    // @nth-n1:~"@{numOfCols}n+1";
+    @r:     @numOfCols;
+    @f:     @numOfCols;
+
+    @g:     @f+1;
 
     @sub-total-width: ( @parent * @column_width ) + (( @parent - 1) * @gutter_width ) ;
-    @sub-width: (( @sub-total-width - ( @gutter_width * ( @numOfCols - 1 ))) / @numOfCols)-0.5 ;
+    @sub-width: (( @sub-total-width - ( @gutter_width * ( @numOfCols - 1 ))) / @numOfCols);
 
     & {
       float: left;
@@ -375,10 +427,9 @@ http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
       margin-left: @margin;
       margin-right: @margin;
       width: @sub-width + 0;
-
     }
 
-    &:nth-of-type( @{numOfCols}n ) {
+    &:nth-of-type( @{r}n+@{f} ) {
       float: left;
       position: relative;
       margin-left: @margin !important;
@@ -394,10 +445,10 @@ http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
       width: @sub-width + 0;
     }
 
-    &:nth-of-type( @{numOfCols}n+1 ) {
+    &:nth-of-type( @{r}n+@{g} ) {
       float: left;
       position: relative;
-      margin-left: 0 ;
+      margin-left: 0;
       margin-right: @margin;
       width: @sub-width + 0;
     }
@@ -428,4 +479,8 @@ http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
 
 
 
+
+
+
 /* Ahora, hijo mío, a más de esto, sé amonestado. No hay fin de hacer muchos libros; y el mucho estudio es fatiga de la carne.  */
+
