@@ -10,7 +10,7 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title> Mozilla Colombia | </title>
+    <title> Mozilla Uganda | </title>
 
     <link rel="icon"
       type="image/ico"
@@ -38,7 +38,7 @@
       <!-- :::::: Header -->
       <header id="header">
         <!-- Tabzilla -->
-        <a href="http://www.mozilla.org/" id="tabzilla" data-locale="es-ES">mozilla</a>
+        <a href="http://www.mozilla.org/" id="tabzilla" data-locale="en-EN">mozilla</a>
 
         <div id="logo-mc"></div>
         <!-- <img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/img/mozilla-colombia-logo.png" alt=""> -->
@@ -47,15 +47,15 @@
 
         <!-- <div id="searchbox"><?php get_search_form(); ?></div> -->
 
-        <!-- Mozilla Hispano -->
+        <!-- Mozilla Uganda -->
         <ul>
-          <a target="_blank" href="http://www.mozilla-hispano.org/">
+          <a target="_blank" href="http://www.mozilla-uganda.org/">
             <li><span class="box-six"></span></li>
           </a>
         </ul>
       </header>
 
-      <!-- ::::::: Mosaico -->
+      <!-- ::::::: Mosaic -->
       <div id="mosaico"></div>
 
       <!-- ::::::: Content -->
@@ -97,7 +97,7 @@
           </div> -->
 
         <!-- Eventbrite -->
-        <h4>Proximos Eventos:</h4>
+        <h4>Upcoming Events:</h4>
          <div class="event_list"><a href="http://eventbrite.com/org/4284610789"></a></div>
 
         </div>
@@ -121,18 +121,18 @@
 
       </div><!-- END Content -->
 
-      <!-- :::::: Comunidad -->
+      <!-- :::::: Commnunity -->
       <div id="comunity">
-        <h4>Comunidad Mozilla Colombia</h4>
+        <h4>Mozilla Uganda Community</h4>
     <?php
-      if (function_exists('comunidad')) {
-        comunidad ();
+      if (function_exists('community')) {
+        community ();
       }
     ?>
       </div>
-      <!-- :::::: Productos -->
+      <!-- :::::: Products -->
       <div id="products">
-        <h4>Productos Mozilla</h4>
+        <h4>Mozilla Products</h4>
         <div id="prod_01" class="productos"><a href="https://www.mozilla.org/firefox/" target="BLANK"></a></div>
         <div id="prod_02" class="productos"><a href="http://www.mozilla.org/es-ES/firefox/os/" target="BLANK"></a></div>
         <div id="prod_03" class="productos"><a href="https://www.marketplace.firefox.com/" target="BLANK"></a></div>
@@ -152,7 +152,7 @@
 
               <div class="footer-license">
                 <a target="_blank" href="http://www.mozilla.org/es-ES/about/manifesto/">
-                   ... Creamos comunidades de personas dedicadas a lograr una mejor experiencia en Internet para todos. ... &nbsp;&nbsp;&nbsp;¿Conoces el manifiesto de Mozilla?
+                   ... We create communities of people dedicated to a better Internet experience for all. ... &nbsp;&nbsp;&nbsp;You know the Mozilla Manifesto?
                 </a>
               </div>
 
